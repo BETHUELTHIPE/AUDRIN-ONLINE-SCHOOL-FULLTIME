@@ -73,6 +73,7 @@ DB_USER=[DB_ADMIN_NAME]
 DB_PASSWORD=[DB_ADMIN_PASSWORD]
 DB_HOST=localhost
 DB_PORT=[YOUR_POSTGRES_PORT default is 5432]
+
 USER_EMAIL=[YOUR_EMAIL]
 USER_PASSWORD=[EMAIL_PASSWORD]
 DEBUG=True
@@ -110,3 +111,4 @@ Last but not least, go to this address http://127.0.0.1:8000
 </div>
 
 ### Show your support by ⭐️ this project!
+# AudrinOnlineSchool

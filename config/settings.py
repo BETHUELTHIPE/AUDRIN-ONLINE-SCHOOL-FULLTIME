@@ -108,26 +108,37 @@ ASGI_APPLICATION = "config.asgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+#DATABASES = {
+     #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+ #}
 
 # -----------------------------
 # NOTE: Some model fields may not work on sqlite db,
 # so consider using postgresql instead
+# Database settings
+# Database settings
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST", default="localhost"),
-        "PORT": config("DB_PORT", default=5432),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config("DB_NAME"),
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST': config("DB_HOST"),
+        'PORT': config("DB_PORT", cast=int),
     }
 }
+
+
+
+# Email settings
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+EMAIL_PORT = config("EMAIL_PORT", cast=int, default=587)
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config("USER_EMAIL")
+EMAIL_HOST_PASSWORD = config("USER_PASSWORD")
 
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -190,11 +201,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # E-mail configuration
 
 EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
-EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")  # Gmail as the email host, but you can change it
 EMAIL_PORT = config("EMAIL_PORT", default=587)
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config("USER_EMAIL")
+EMAIL_HOST_USER = config("USER_EMAIL", default="moukangwebethuel@gmail.com")
 EMAIL_HOST_PASSWORD = config("USER_PASSWORD")
+
+
 
 # crispy config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

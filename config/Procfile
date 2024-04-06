@@ -1,3 +1,2 @@
 #web: gunicorn DJANGO-LMS.wsgi --log-file -
 web: gunicorn config.wsgi --log-file -
-

@@ -1,7 +1,7 @@
 
 import os
 from decouple import config
-#from channels import AsgiHandler
+
 
 
 
@@ -35,7 +35,10 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'channels'
 ]
+
+
 
 # Third party apps
 THIRD_PARTY_APPS = [

@@ -1,7 +1,7 @@
 
 import os
 from decouple import config
-from channels import AsgiHandler
+#from channels import AsgiHandler
 
 
 

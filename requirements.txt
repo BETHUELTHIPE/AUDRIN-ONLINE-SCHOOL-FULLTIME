@@ -1,12 +1,13 @@
 asgiref==3.7.2
 black==22.12.0
 certifi==2024.2.2
+channels==4.1.0
 charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
 crispy-bootstrap5==0.7
 Deprecated==1.2.14
-Django==4.0.8
+Django==5.0.4
 django-cors-headers==3.13.0
 django-crispy-forms==1.14.0
 django-filter==23.5

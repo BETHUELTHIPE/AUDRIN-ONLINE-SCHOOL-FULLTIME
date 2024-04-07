@@ -1,10 +1,5 @@
-
 import os
 from decouple import config
-
-
-
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +14,7 @@ SECRET_KEY = config(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = ["127.0.0.1", "*"]
+ALLOWED_HOSTS = ["127.0.0.1", "https://audrin-online-school-fulltime-43b86a75879c.herokuapp.com"]
 #host=audrin-online-school-fulltime-43b86a75879c.herokuapp.com request_id=57fd1932-4754-48f8-a12c-d610a318f8ea
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
@@ -35,10 +30,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'channels'
 ]
-
-
 
 # Third party apps
 THIRD_PARTY_APPS = [
@@ -125,7 +117,6 @@ DATABASES = {
         'PORT': config("DB_PORT", cast=int),
     }
 }
-
 
 
 

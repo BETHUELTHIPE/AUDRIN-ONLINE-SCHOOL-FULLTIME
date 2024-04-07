@@ -1,1 +1,1 @@
-web: gunicorn audrin-online-school-fulltime.wsgi --log-file -
+web: gunicorn config.wsgi --log-file -

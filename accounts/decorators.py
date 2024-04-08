@@ -33,13 +33,13 @@ def lecturer_required(
     redirect_to="/",
 ):
     """
-    Decorator for views that checks that the logged-in user is a superuser,
+    Decorator for views that checks that the logged-in user is a lecturer,
     redirects to the specified URL if necessary.
     """
 
-    # Define the test function: checks if the user is active and a superuser
+    # Define the test function: checks if the user is active and a lecturer
     def test_func(user):
-        return user.is_active and user.is_lecturer or user.is_superuser
+        return user.is_active and user.is_lecturer
 
     # Define the wrapper function to handle the response
     def wrapper(request, *args, **kwargs):
@@ -58,13 +58,13 @@ def student_required(
     redirect_to="/",
 ):
     """
-    Decorator for views that checks that the logged-in user is a superuser,
+    Decorator for views that checks that the logged-in user is a student,
     redirects to the specified URL if necessary.
     """
 
-    # Define the test function: checks if the user is active and a superuser
+    # Define the test function: checks if the user is active and a student
     def test_func(user):
-        return user.is_active and user.is_student or user.is_superuser
+        return user.is_active and user.is_student
 
     # Define the wrapper function to handle the response
     def wrapper(request, *args, **kwargs):

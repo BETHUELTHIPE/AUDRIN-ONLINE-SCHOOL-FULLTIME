@@ -1,5 +1,6 @@
 import os
 from decouple import config
+import smtplib
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -14,8 +15,8 @@ SECRET_KEY = config(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
-HOST = ["127.0.0.1", "audrin-online-school-fulltime-43b86a75879c.herokuapp.com"]
-#host=audrin-online-school-fulltime-43b86a75879c.herokuapp.com request_id=57fd1932-4754-48f8-a12c-d610a318f8ea
+ALLOWED_HOSTS = ["127.0.0.1", "audrin-online-school-fulltime-43b86a75879c.herokuapp.com"]
+
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
 
